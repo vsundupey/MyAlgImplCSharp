@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.QuickSortImpl", "Sorting.QuickSort\Sorting.QuickSortImpl.csproj", "{42922C6E-B0FF-4176-A017-61AC5227DD0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.SortAlgorithm", "Sorting.SortAlgorithm\Sorting.SortAlgorithm.csproj", "{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting", "Sorting", "{B21E7D69-D1A6-44DC-8123-55D4AAD769BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{DEC13213-6C28-451B-A084-EEE8708E174E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.QuickSortConsole", "Demo.QuickSortConsole\Demo.QuickSortConsole.csproj", "{558A79C8-A719-4713-B388-74EE42C66A38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.QuickSortImpl.Tests", "Sorting.QuickSortImpl.Tests\Sorting.QuickSortImpl.Tests.csproj", "{D1728870-6246-488B-A298-4A0D83F782A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{D9C75FAB-BE64-43D9-A20C-34BC14DC0297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.TestsHelper", "Helpers.TestsHelper\Helpers.TestsHelper.csproj", "{7C2AB655-F132-4B84-A781-507E44AE32B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42922C6E-B0FF-4176-A017-61AC5227DD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42922C6E-B0FF-4176-A017-61AC5227DD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42922C6E-B0FF-4176-A017-61AC5227DD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42922C6E-B0FF-4176-A017-61AC5227DD0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558A79C8-A719-4713-B388-74EE42C66A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558A79C8-A719-4713-B388-74EE42C66A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558A79C8-A719-4713-B388-74EE42C66A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558A79C8-A719-4713-B388-74EE42C66A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1728870-6246-488B-A298-4A0D83F782A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1728870-6246-488B-A298-4A0D83F782A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1728870-6246-488B-A298-4A0D83F782A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1728870-6246-488B-A298-4A0D83F782A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2AB655-F132-4B84-A781-507E44AE32B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2AB655-F132-4B84-A781-507E44AE32B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2AB655-F132-4B84-A781-507E44AE32B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2AB655-F132-4B84-A781-507E44AE32B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42922C6E-B0FF-4176-A017-61AC5227DD0E} = {B21E7D69-D1A6-44DC-8123-55D4AAD769BB}
+		{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7} = {B21E7D69-D1A6-44DC-8123-55D4AAD769BB}
+		{DEC13213-6C28-451B-A084-EEE8708E174E} = {B21E7D69-D1A6-44DC-8123-55D4AAD769BB}
+		{558A79C8-A719-4713-B388-74EE42C66A38} = {DEC13213-6C28-451B-A084-EEE8708E174E}
+		{D1728870-6246-488B-A298-4A0D83F782A6} = {B21E7D69-D1A6-44DC-8123-55D4AAD769BB}
+		{7C2AB655-F132-4B84-A781-507E44AE32B4} = {D9C75FAB-BE64-43D9-A20C-34BC14DC0297}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDD8A3DD-4241-42CD-AA3B-5FC99F3D4637}
+	EndGlobalSection
+EndGlobal
