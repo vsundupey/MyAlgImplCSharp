@@ -2,6 +2,7 @@
 */obj/
 */Debug/
 */Release/
+*/.vscode/
 
 *.suo
 *.ide
