@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Helpers.TestsHelper\Helpers.TestsHelper.csproj" />
-    <ProjectReference Include="..\Sorting.QuickSort\Sorting.QuickSortImpl.csproj" />
+    <ProjectReference Include="..\Sorting.QuickSortImpl\Sorting.QuickSortImpl.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.QuickSortImpl", "Sorting.QuickSort\Sorting.QuickSortImpl.csproj", "{42922C6E-B0FF-4176-A017-61AC5227DD0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.QuickSortImpl", "Sorting.QuickSortImpl\Sorting.QuickSortImpl.csproj", "{42922C6E-B0FF-4176-A017-61AC5227DD0E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorting.SortAlgorithm", "Sorting.SortAlgorithm\Sorting.SortAlgorithm.csproj", "{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}"
 EndProject

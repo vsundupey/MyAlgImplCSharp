@@ -15,7 +15,7 @@ namespace Sorting.SortAlgorithm
     }
 
     public static class SortingArrayExtension
-    {
+    {      
         public static void Print(this IList<int> array)
         { 
             Console.WriteLine(string.Join(" ", array.Select(v => v.ToString())));
@@ -26,8 +26,8 @@ namespace Sorting.SortAlgorithm
         {
             if (array.Count == 1) return true;
 
-            for (int i = 0; i < array.Count -1; i++)
-                if(array[i] > array[i+1]) return false;
+            for (int i = 0; i < array.Count - 1; i++)
+                if (array[i] > array[i + 1]) return false;
 
             return true;
         }

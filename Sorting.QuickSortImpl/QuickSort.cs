@@ -29,23 +29,21 @@ namespace Sorting.QuickSortImpl
 
         public Task Sort(IList<int> array)
         {
-            return Task.Run(() => Sort(array, 0, array.Count - 1));
+            return Sort(array, 0, array.Count - 1);
         }
 
-        private Task Sort(IList<int> array, int left, int right, PivotType type = PivotType.Rand)
+        private async Task Sort(IList<int> array, int left, int right, PivotType type = PivotType.Rand)
         {
-            return Task.Run(async () =>
-            {
-                if (left >= right) return;
+            if (left >= right) return;
 
-                if (IsDebug) Console.WriteLine($"Recursive call round => {_currentRound++} | left = {left}, right = {right}");
+            if (IsDebug)
+                Console.WriteLine($"Recursive call round => {_currentRound++} | left = {left}, right = {right}");
 
-                int pivotIndex = array.GetPivot(left, right, type);
-                int partitionIndex = array.Partition(left, right, pivotIndex);
+            int pivotIndex = array.GetPivot(left, right, type);
+            int partitionIndex = array.Partition(left, right, pivotIndex);
 
-                await Sort(array, left, partitionIndex - 1);
-                await Sort(array, partitionIndex, right);
-            });
+            await Sort(array, left, partitionIndex - 1);
+            await Sort(array, partitionIndex, right);
         }
     }
 }

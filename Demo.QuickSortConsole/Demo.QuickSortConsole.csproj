@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sorting.QuickSort\Sorting.QuickSortImpl.csproj" />
+    <ProjectReference Include="..\Sorting.QuickSortImpl\Sorting.QuickSortImpl.csproj" />
     <ProjectReference Include="..\Sorting.SortAlgorithm\Sorting.SortAlgorithm.csproj" />
   </ItemGroup>
 

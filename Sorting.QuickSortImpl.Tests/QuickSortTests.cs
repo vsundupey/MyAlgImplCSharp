@@ -11,22 +11,34 @@ namespace Sorting.QuickSortImpl.Tests
     {       
         public QuickSortTests()
         {
-            Algorithm = service.AddSingleton<ISortAlgorithm, QuickSort>()
+            Algorithm = Service.AddSingleton<ISortAlgorithm, QuickSort>()
                 .BuildServiceProvider()
                 .GetService<ISortAlgorithm>();
+
+            if (Algorithm is QuickSort algorithm) algorithm.IsDebug = false;
         }
 
         [Fact]
         public async Task Sort_Random_Sequence_ShouldBe_Ok()
         {
-            // arrange
-            var array = GetRandomSequence();
+            try
+            {
+                // arrange
+                var array = GetRandomSequence();
+            
+                // act
+                await Algorithm.Sort(array);
+            
+                array.Print();
+            
+                // assert
+                Assert.True(array.IsSorted());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.GetBaseException());
+            }
 
-            // act
-            await Algorithm.Sort(array);
-
-            // assert
-            Assert.True(array.IsSorted());
         }
 
         [Fact]

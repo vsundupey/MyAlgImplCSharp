@@ -22,8 +22,8 @@ namespace Helpers.TestsHelper
 
         protected IList<int> GetRandomSequence(int count = 10)
         {
-            int[] array = new int[count];
-            for(int i = 0; i < count; i++) array[i] = _rand.Next(0, 100);
+            var array = new int[count];
+            for(var i = 0; i < count; i++) array[i] = _rand.Next(0, 100);
             return array;
         }
 
