@@ -3,6 +3,7 @@
 */Debug/
 */Release/
 */.vscode/
+/.idea/
 
 *.suo
 *.ide

@@ -7,9 +7,9 @@ namespace Helpers.TestsHelper
 {
     public abstract class BaseSortTestsHelper
     {
-        protected ServiceCollection service;
+        protected readonly ServiceCollection Service;
         protected ISortAlgorithm Algorithm;
-        Random _rand = new Random();
+        private readonly Random _rand = new Random();
 
         #region Sorted properties
 
@@ -17,20 +17,20 @@ namespace Helpers.TestsHelper
 
         protected BaseSortTestsHelper()
         {
-            service = new ServiceCollection();
+            Service = new ServiceCollection();
         }
 
-        public IList<int> GetRandomSequence(int count = 10)
+        protected IList<int> GetRandomSequence(int count = 10)
         {
             int[] array = new int[count];
             for(int i = 0; i < count; i++) array[i] = _rand.Next(0, 100);
             return array;
         }
 
-        public IList<int> GetSortedSequence(int count = 10)
+        protected IList<int> GetSortedSequence(int count = 10)
         {
-            int[] array = new int[count];
-            for (int i = 0; i < count; i++) array[i] = i;
+            var array = new int[count];
+            for (var i = 0; i < count; i++) array[i] = i;
             return array;
         }
     }
