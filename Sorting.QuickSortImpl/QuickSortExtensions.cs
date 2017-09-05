@@ -53,9 +53,10 @@ namespace Sorting.QuickSortImpl
         /// <returns>Partition index</returns>
         public static int Partition(this IList<int> array, int left, int right, int pivotIndex)
         {
+            var pivotValue = array[pivotIndex];
             while (left <= right)
             {
-                while (array[left] < array[pivotIndex])
+                while (array[left] < pivotValue)
                 {
                     if (Print) array.PrintShift(pivotIndex, left, " => ");
                     left++;
@@ -63,7 +64,7 @@ namespace Sorting.QuickSortImpl
 
                 if (Print) array.PrintSelected(pivotIndex, left);
 
-                while (array[right] > array[pivotIndex])
+                while (array[right] > pivotValue)
                 {
                     if (Print) array.PrintShift(pivotIndex, right, " <= ");
                     right--;
