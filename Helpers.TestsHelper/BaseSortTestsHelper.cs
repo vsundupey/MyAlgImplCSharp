@@ -23,7 +23,7 @@ namespace Helpers.TestsHelper
         protected IList<int> GetRandomSequence(int count = 10)
         {
             var array = new int[count];
-            for(var i = 0; i < count; i++) array[i] = _rand.Next(0, 100);
+            for(var i = 0; i < count; i++) array[i] = _rand.Next(-100, 100);
             return array;
         }
 

@@ -10,17 +10,13 @@ namespace Sorting.QuickSortImpl.Tests
     {
         public QuickSortTests()
         {
-            Algorithm = Service.AddSingleton<ISortAlgorithm, QuickSort>()
-                .BuildServiceProvider()
-                .GetService<ISortAlgorithm>();
-
-            if (Algorithm is QuickSort algorithm) algorithm.IsDebug = false;
+            Algorithm = new QuickSort { IsDebug = false };
         }
 
         [Fact]
         public async Task Sort_Random_Sequence_ShouldBe_Ok()
         {
-            int countOfRetries = 10;
+            int countOfRetries = 5;
 
             for (int i = 0; i < countOfRetries; i++)
             {

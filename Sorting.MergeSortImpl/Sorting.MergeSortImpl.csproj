@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sorting.SortAlgorithm\Sorting.SortAlgorithm.csproj">
+      <Project>{E9DCE2B8-EAE8-4573-9923-96CB15BD04E7}</Project>
+      <Name>Sorting.SortAlgorithm</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

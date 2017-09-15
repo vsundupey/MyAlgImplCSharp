@@ -86,19 +86,19 @@ namespace Sorting.QuickSortImpl
 
         #region Print debug info
 
-        public static void PrintSwap(this IList<int> array, int pivotIndex, int left, int right)
+        private static void PrintSwap(this IList<int> array, int pivotIndex, int left, int right)
         {
             PrintPivotInfo(pivotIndex, array[pivotIndex]);
             array.PrintSwap(left, right);
         }
 
-        public static void PrintSelected(this IList<int> array, int pivotIndex, int currentIndex)
+        private static void PrintSelected(this IList<int> array, int pivotIndex, int currentIndex)
         {
             PrintPivotInfo(pivotIndex, array[pivotIndex]);
             array.PrintSelected(currentIndex, " |x| ");
         }
 
-        public static void PrintShift(this IList<int> array, int pivotIndex, int currentIndex, string direction)
+        private static void PrintShift(this IList<int> array, int pivotIndex, int currentIndex, string direction)
         {
             PrintPivotInfo(pivotIndex, array[pivotIndex]);
             array.PrintShift(currentIndex, direction);
