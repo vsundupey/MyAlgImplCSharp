@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers.TestsHelper\Helpers.TestsHelper.csproj">
+      <Project>{7C2AB655-F132-4B84-A781-507E44AE32B4}</Project>
+      <Name>Helpers.TestsHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Search.LinearImpl\Search.LinearImpl.csproj" />
+    <ProjectReference Include="..\Search.SearchAlgorithm\Search.SearchAlgorithm.csproj" />
+  </ItemGroup>
+</Project>

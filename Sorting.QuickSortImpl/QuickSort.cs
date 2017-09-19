@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Sorting.SortAlgorithm;
 
+// Time O(n*log(n)), Sapce O(log(n)) 
 namespace Sorting.QuickSortImpl
 {
     public class QuickSort : ISortAlgorithm
@@ -21,11 +22,6 @@ namespace Sorting.QuickSortImpl
         }
 
         public bool ShowStatistics { get; set; }
-
-        public QuickSort()
-        {
-            IsDebug = true;
-        }
 
         public Task Sort(IList<int> array)
         {

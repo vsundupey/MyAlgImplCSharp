@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Sorting.SortAlgorithm;
 
+// Time O(n*log(n)), Space O(n)
 namespace Sorting.MergeSortImpl
 {
     public class MergeSort : ISortAlgorithm

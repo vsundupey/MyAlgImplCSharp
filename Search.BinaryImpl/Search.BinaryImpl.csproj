@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Search.SearchAlgorithm\Search.SearchAlgorithm.csproj">
+      <Project>{61C2617D-B44F-4EF5-87A6-0CC578653448}</Project>
+      <Name>Search.SearchAlgorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sorting.QuickSortImpl\Sorting.QuickSortImpl.csproj">
+      <Project>{42922C6E-B0FF-4176-A017-61AC5227DD0E}</Project>
+      <Name>Sorting.QuickSortImpl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sorting.SortAlgorithm\Sorting.SortAlgorithm.csproj" />
+  </ItemGroup>
+</Project>
