@@ -22,9 +22,20 @@ namespace Search.LinearImpl.Tests
             var randIndex = new Random().Next(0, array.Count - 1);
             var searchValue = array[randIndex];
 
-            var result = _alg.Find(array.ToArray(), searchValue);
+            var result = _alg.Find(array, searchValue);
             
             Assert.Equal(randIndex, result);
+        }
+        
+        [Fact]
+        public void Search_ShouldBe_Negative()
+        {
+            var array = GetRandomSequence();  // range between -100 and 100    
+            var searchValue = 1000;
+
+            var result = _alg.Find(array, searchValue);
+            
+            Assert.Equal(-1, result);
         }
     }
 }

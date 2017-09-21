@@ -26,5 +26,17 @@ namespace Search.BinaryImpl.Tests
             
             Assert.Equal(searchValue, array[result]);
         }
+        
+        [Fact]
+        public void Search_Should_Not_Be_Ok()
+        {
+            int n = new Random().Next(100);
+            var array = GetSortedSequence(n);  // range between 0 and n    
+            var searchValue = 1000;
+
+            var result = _alg.Find(array, searchValue);
+            
+            Assert.Equal(-1, result);
+        }
     }
 }
