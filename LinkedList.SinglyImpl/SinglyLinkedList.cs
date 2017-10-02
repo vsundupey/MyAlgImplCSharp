@@ -3,28 +3,27 @@
 namespace LinkedList.SinglyImpl
 {
     /// <summary>
-    /// Singly linked list simple implementation
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+    /// Singly linked list simple implementation (not thread safe)
     /// </summary>
     /// <typeparam name="T">Value object</typeparam>
     public class SinglyLinkedList<T>
     {
         private Node<T> _head;
         private Node<T> _current;
-        private Node<T> _last;
+        private Node<T> _tail;
 
         private int _count = 0;
         private int _currentIndex = 0;
+
+        public T First => _head.Data;
+        public T Current => _current.Data;
+        public T Last => _tail.Data;
 
         public int Count => _count;
         public int CurrentIndex => _currentIndex;
 
         /// <summary>
-        /// Add new node to end of list
+        /// Add new node to end of list, Time O(1)
         /// </summary>
         /// <param name="item"></param>
         public void Add(T item)
@@ -36,7 +35,7 @@ namespace LinkedList.SinglyImpl
         }
 
         /// <summary>
-        /// Add new node as first
+        /// Add new node as first, Time O(1)
         /// </summary>
         /// <param name="item"></param>
         public void AddFront(T item)
@@ -51,9 +50,16 @@ namespace LinkedList.SinglyImpl
             }
         }
 
+        /// <summary>
+        /// In linkedlist insert operation is O(1)
+        /// but in current case we have 2 step - search and insert
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="item"></param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
         public void Insert(int index, T item)
         {
-            if (index < 0 || index > _count) throw new IndexOutOfRangeException();
+            if (index < 0 || index > _count - 1) throw new IndexOutOfRangeException();
 
             SetCurrent(index);
 
@@ -61,8 +67,18 @@ namespace LinkedList.SinglyImpl
             _current = tmp;
             _count++;
         }
+        
+        // Time O(n)
+        public void Remove()
+        {
+            if(_tail == null) 
+                return;
+            
+            RemoveAt(_count - 1);              
+        }
 
-        public void Remove(int index)
+        // Time O(n)
+        public void RemoveAt(int index)
         {
             if (index < 0 || index > _count) throw new IndexOutOfRangeException();
 
@@ -78,19 +94,26 @@ namespace LinkedList.SinglyImpl
             _current.Next = _current.Next.Next;
         }
 
-        private void SetCurrent(int index)
+        // Time O(n)
+        public void SetCurrent(int index)
         {
-            _current = _head;
+            if(index == _currentIndex) return;
+            
+            int i = index;
+
+            if (index < _currentIndex)
+            {
+                _current = _head;
+                i = 0;
+            }
 
             if (index == 0) return;
 
             if (index == Count)
             {
-                _current = _last;
+                _current = _tail;
                 return;
             }
-
-            int i = 0;
 
             while (i != index)
             {
@@ -106,7 +129,8 @@ namespace LinkedList.SinglyImpl
         private void InternalAddFirst(T item)
         {
             _head = new Node<T>(item, null);
-            _last = _head;
+            _tail = _head;
+            _current = _tail;
             _count++;
         }
 
@@ -116,8 +140,8 @@ namespace LinkedList.SinglyImpl
         /// <param name="item"></param>
         private void InternalAppend(T item)
         {
-            _last.Next = new Node<T>(item, null);
-            _last = _last.Next;
+            _tail.Next = new Node<T>(item, null);
+            _tail = _tail.Next;
             _count++;
         }
 
@@ -134,9 +158,9 @@ namespace LinkedList.SinglyImpl
             } while (tmp != null);
         }
 
-        public class Node<T2>
+        private class Node<T2>
         {
-            private T2 _data;
+            public T2 Data;
             public Node<T2> Next;
 
             public Node()
@@ -145,13 +169,13 @@ namespace LinkedList.SinglyImpl
 
             public Node(T2 data, Node<T2> next)
             {
-                _data = data;
+                Data = data;
                 Next = next;
             }
 
             public void Print()
             {
-                Console.WriteLine(_data);
+                Console.WriteLine(Data);
             }
         }
     }

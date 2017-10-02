@@ -3,11 +3,6 @@ using LinkedList.SinglyImpl;
 
 namespace Demo.SinglyLinkedListConsole
 {
-    public class MyObj
-    {
-        public string Name { get; set; }
-    }
-
     class Program
     {
         static void Main(string[] args)
