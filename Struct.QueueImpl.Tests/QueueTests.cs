@@ -8,7 +8,7 @@ namespace Struct.QueueImpl.Tests
         [Fact]
         public void Peek_ShouldBe_Ok()
         {
-            var queue = new Queue<string>();
+            var queue = new MyQueue<string>();
             var first = "value1";
             
             queue.Add(first);
@@ -19,33 +19,27 @@ namespace Struct.QueueImpl.Tests
         }
         
         [Fact]
-        public void Remove_ShouldBe_Ok()
+        public void Peek_Should_Throw_NullException()
         {
-            var queue = new Queue<string>();
-            var first = "value1";
+            var queue = new MyQueue<string>();
             
-            queue.Add(first);
-            queue.Add("value2");
-            queue.Add("value3");
-            
-            queue.Remove();
-            
-            Assert.NotEqual(first, queue.Peek());
+            Assert.Throws<NullReferenceException>(() => queue.Peek());
         }
         
         [Fact]
-        public void Dequeue_ShouldBe_Ok()
+        public void Remove_ShouldBe_Ok()
         {
-            var queue = new Queue<string>();
+            var queue = new MyQueue<string>();
             var first = "value1";
             
             queue.Add(first);
             queue.Add("value2");
             queue.Add("value3");
             
-            var result = queue.Dequeue();
+            var result = queue.Remove();
             
-            Assert.Equal(first, result);
+            Assert.Equal(first, result); // Dequeue element
+            Assert.NotEqual(first, queue.Peek()); // check that element removed
         }
     }
 }

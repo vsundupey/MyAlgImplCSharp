@@ -6,21 +6,21 @@ namespace Struct.QueueImpl
     /// Simple generic queue implementation
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class Queue<T>
+    public class MyQueue<T>
     {
-        private class Node<T2>
+        private class QueueNode<T2>
         {
             public T2 Data { get; }
-            public Node<T2> Next { get; set; }
+            public QueueNode<T2> Next { get; set; }
             
-            public Node(T2 data)
+            public QueueNode(T2 data)
             {
                 Data = data;
             }
         }
 
-        private Node<T> _head;
-        private Node<T> _tail;
+        private QueueNode<T> _head;
+        private QueueNode<T> _tail;
 
         public bool IsEmpty()
         {
@@ -29,12 +29,13 @@ namespace Struct.QueueImpl
 
         public T Peek()
         {
+            if(_head == null) throw new NullReferenceException("Queue is empty");
             return _head.Data;
         }
 
         public void Add(T data)
         {
-            var newNode = new Node<T>(data);
+            var newNode = new QueueNode<T>(data);
             
             if (_head == null)
             {
@@ -47,16 +48,17 @@ namespace Struct.QueueImpl
             _tail = _tail.Next;
         }
 
-        public void Remove()
-        {
-            _head = _head.Next;
-        }
-
-        public T Dequeue()
+        public T Remove()
         {
             var value = Peek();
-            Remove();
+            _head = _head.Next;
+            
+            if (_head == null)
+                _tail = null;
+            
             return value;
         }
+
+
     }
 }
