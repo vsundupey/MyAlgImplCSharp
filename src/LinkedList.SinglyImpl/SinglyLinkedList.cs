@@ -52,7 +52,7 @@ namespace LinkedList.SinglyImpl
 
         /// <summary>
         /// In linkedlist insert operation is O(1)
-        /// but in current case we have 2 step - search and insert
+        /// but in current case we have 2 step - search and insert - O(n)
         /// </summary>
         /// <param name="index"></param>
         /// <param name="item"></param>
