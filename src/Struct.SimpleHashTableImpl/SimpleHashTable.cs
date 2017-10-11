@@ -27,19 +27,22 @@ namespace Struct.SimpleHashTableImpl
             _table = new HashEntry[_size];
         }
 
-        public override object Get(object key)
+        public override object GetValue(object key)
         {
-            var hash = SearchKeyIndex(key, new KeyNotFoundException($"Key {key} not found"));
+            var hash = GetHash(key, new KeyNotFoundException($"Key {key} not found"));
 
-            return _table[hash] == null ? null : _table[hash].Value;
+            return _table[hash].Value;
         }
 
         public bool ContainsKey(object key)
         {
             try
             {
-                SearchKeyIndex(key, new KeyNotFoundException($"Key {key} not found"));
-                return true;
+                var hash = GetHash(key, new KeyNotFoundException($"Key {key} not found"));
+
+                if(_table[hash] == null) return false;
+
+                return _table[hash].Key.Equals(key);
             }
             catch (KeyNotFoundException)
             {
@@ -49,13 +52,13 @@ namespace Struct.SimpleHashTableImpl
 
         public void Remove(object key)
         {
-            var hash = SearchKeyIndex(key, new KeyNotFoundException($"Key {key} not found"));
+            var hash = GetHash(key, new KeyNotFoundException($"Key {key} not found"));
             _table[hash] = null;
         }
 
         public void Add(object key, object value)
         {
-            var hash = SearchKeyIndex(key, new OverflowException($"Table max size {_size} is exceeded"));
+            var hash = GetHash(key, new OverflowException($"Table max size {_size} is exceeded"));
 
             _table[hash] = new HashEntry(key, value);
         }
@@ -67,7 +70,7 @@ namespace Struct.SimpleHashTableImpl
         /// <param name="exception">Use custom exception for different cases</param>
         /// <returns>Index for key location in array</returns>
         /// <exception cref="Exception"></exception>
-        private int SearchKeyIndex(object key, Exception exception = null)
+        private int GetHash(object key, Exception exception = null)
         {
             int currentIndex = 0;
             var hash = ((int) key % _size);

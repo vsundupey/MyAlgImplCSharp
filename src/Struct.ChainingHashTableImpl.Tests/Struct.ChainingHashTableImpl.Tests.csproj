@@ -10,6 +10,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Struct.ChainingHashTableImpl\Struct.ChainingHashTableImpl.csproj" />
-    <ProjectReference Include="..\Struct.SimpleHashTableImpl\Struct.SimpleHashTableImpl.csproj" />
   </ItemGroup>
 </Project>

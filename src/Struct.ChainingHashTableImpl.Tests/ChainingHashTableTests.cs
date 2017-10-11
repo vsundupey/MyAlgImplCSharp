@@ -1,15 +1,15 @@
 using System;
 using Xunit;
 
-namespace Struct.SimpleHashTableImpl.Tests
+namespace Struct.ChainingHashTableImpl.Tests
 {
-    public class SimpleHashTableTests
+    public class ChainingHashTableTests
     {
-        private SimpleHashTable _table;
+        private ChainingHashTable _table;
 
-        public SimpleHashTableTests()
+        public ChainingHashTableTests()
         {
-            _table = new SimpleHashTable();
+            _table = new ChainingHashTable();
         }
 
         [Fact]
@@ -28,13 +28,9 @@ namespace Struct.SimpleHashTableImpl.Tests
         
         [Fact]
         public void ContainsKeyShouldBeFalse()
-        {           
-            var keyForGet45 = 45;
-            var valueForGet45 = "Hello45";
-            
+        {                      
             _table.Add(5, "Hello5");
             _table.Add(3, "Hello3");
-            _table.Add(keyForGet45, valueForGet45);
             _table.Add(4, "Hello4");
            
             Assert.False(_table.ContainsKey(2));
@@ -54,22 +50,7 @@ namespace Struct.SimpleHashTableImpl.Tests
             _table.Remove(keyForGet45);
             Assert.False(_table.ContainsKey(keyForGet45));
         }
-        
-        [Fact]
-        public void AddShouldThrowOverflowException()
-        {           
-            var keyForGet45 = 45;
-            var valueForGet45 = "Hello45";
-            
-            _table = new SimpleHashTable(3);
-            
-            _table.Add(5, "Hello5");
-            _table.Add(3, "Hello3");
-            _table.Add(keyForGet45, valueForGet45);
-            Assert.Throws<OverflowException>(() => _table.Add(4, "Hello4"));
-           
-        }
-        
+               
         [Fact]
         public void GetValueUsingKeyShouldBeOk()
         {

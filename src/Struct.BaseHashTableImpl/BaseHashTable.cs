@@ -24,7 +24,7 @@ namespace Struct.BaseHashTableImpl
         /// </summary>
         /// <param name="key"></param>
         /// <returns>value, if not found throw KeyNotFoundException</returns>
-        object Get(object key);
+        object GetValue(object key);
 
         /// <summary>
         /// Check for existing key
@@ -48,7 +48,7 @@ namespace Struct.BaseHashTableImpl
             {
                 try
                 {
-                    return Get(key);
+                    return GetValue(key);
                 }
                 catch (KeyNotFoundException e)
                 {
@@ -58,7 +58,7 @@ namespace Struct.BaseHashTableImpl
         }
 
 
-        public abstract object Get(object key);
+        public abstract object GetValue(object key);
 
         protected class HashEntry
         {
@@ -71,5 +71,15 @@ namespace Struct.BaseHashTableImpl
                 Value = value;
             }
         }
+
+        protected class LinkedHashEntry : HashEntry
+        {
+            public LinkedHashEntry Next { get; set; }
+            
+            public LinkedHashEntry(object key, object value) : base(key, value)
+            {
+            }
+            
+        }        
     }
 }

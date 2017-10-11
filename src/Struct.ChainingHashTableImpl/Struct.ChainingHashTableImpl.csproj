@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Struct.BaseHashTableImpl\Struct.BaseHashTableImpl.csproj">
+      <Project>{2F5024E8-19B7-4513-B4A0-96DB9B390264}</Project>
+      <Name>Struct.BaseHashTableImpl</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
