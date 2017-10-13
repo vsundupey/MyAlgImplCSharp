@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/vsundupey/MyAlgImplCSharp.svg?branch=master)](https://travis-ci.org/vsundupey/MyAlgImplCSharp)
 # My implementation of basic algorithms and structures
 
 The main goal of the development is to refresh university knowledge and a deeper understanding of the details
