@@ -1,0 +1,27 @@
+language: csharp
+dist: trusty
+mono: none
+dotnet: 2.0.0
+install:
+- dotnet restore
+script:
+- dotnet build
+
+# LinkedList
+- dotnet test src/LinkedList.SinglyImpl.Tests/LinkedList.SinglyImpl.Tests.csproj
+
+# Search algorithms
+- dotnet test src/Search.LinearImpl.Tests/Search.LinearImpl.Tests.csproj
+- dotnet test src/Search.BinaryImpl.Tests/Search.BinaryImpl.Tests.csproj
+
+# Sort alogorithms
+- dotnet test src/Sorting.MergeSortImpl.Tests/Sorting.MergeSortImpl.Tests.csproj
+- dotnet test src/Sorting.QuickSortImpl.Tests/Sorting.QuickSortImpl.Tests.csproj
+
+# Stack and Queue
+- dotnet test src/Struct.StackImpl.Tests/Struct.StackImpl.Tests.csproj 
+- dotnet test src/Struct.QueueImpl.Tests/Struct.QueueImpl.Tests.csproj
+
+# Hash table
+- dotnet test src/Struct.ChainingHashTableImpl.Tests/Struct.ChainingHashTableImpl.Tests.csproj
+- dotnet test src/Struct.SimpleHashTableImpl.Tests/Struct.SimpleHashTableImpl.Tests.csproj
