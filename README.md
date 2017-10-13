@@ -53,7 +53,7 @@ C# implementation using netcore2.0
    
 
 ## Other
-- [ ] Add Travis CI
+- [x] Add Travis CI
 - [x] xUnit Tests
 
 
