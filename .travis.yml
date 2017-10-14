@@ -25,3 +25,6 @@ script:
 # Hash table
 - dotnet test src/Struct.ChainingHashTableImpl.Tests/Struct.ChainingHashTableImpl.Tests.csproj
 - dotnet test src/Struct.SimpleHashTableImpl.Tests/Struct.SimpleHashTableImpl.Tests.csproj
+
+# Tree
+- dotnet test src/Struct.TreeBinaryImpl.Tests/Struct.TreeBinaryImpl.Tests.csproj
