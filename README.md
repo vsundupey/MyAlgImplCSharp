@@ -26,7 +26,7 @@ C# implementation using netcore2.0
 - [x] LinkedList
   - [x] Singly Linked List
   - [ ] Doubly Linked List
-  - [ ] Singly Linked List
+  - [ ] Circular Linked List
 - [x] Stack
   - [x] LinkedList implementation
   - [ ] ArrayList implementaion
@@ -38,9 +38,16 @@ C# implementation using netcore2.0
   - [x] Linear probing
   - [ ] Quadratic probing
   - [ ] Double hashing
-- [ ] Trees
-  - [ ] Binary Tree
-  - [ ] Binary Search Tree
+- [x] Trees
+  - [x] Binary Tree
+    - [x] InOrder/PreOrder/PostOrder traversal
+    - [ ] Level Order traversal
+    - [ ] Check for Complete
+    - [ ] Check for Full
+  - [x] Binary Search Tree (Extends Binary Tree)
+    - [x] Insert
+    - [x] Search
+    - [ ] Remove
   - [ ] AVL Tree
   - [ ] Red-Black Tree
 - [ ] Graphs
