@@ -7,7 +7,7 @@ namespace Struct.TreeBinaryImpl
     public class TreeNode
     {
         public readonly int Data;
-        
+
         public TreeNode Left { get; set; }
         public TreeNode Right { get; set; }
 
@@ -15,26 +15,117 @@ namespace Struct.TreeBinaryImpl
         {
             Data = data;
         }
+
+        public void Insert(int value)
+        {
+            if (value <= Data)
+            {
+                if (Left == null)
+                    Left = new TreeNode(value);
+                else
+                    Left.Insert(value);
+            }
+            else
+            {
+                if (Right == null)
+                    Right = new TreeNode(value);
+                else
+                    Right.Insert(value);
+            }
+        }
+
+        public bool Contains(int value)
+        {
+            if (Data == value)
+                return true;
+
+
+            if (value < Data)
+            {
+                if (Left == null)
+                    return false;
+                
+                return Left.Contains(value);
+            }
+            else
+            {
+                if (Right == null)
+                    return false;
+                
+                return Right.Contains(value);
+            }
+        }
+
+        //TODO Remove
+        public void Remove(int value)
+        {
+            throw new NotImplementedException();
+        }
+        
+        #region For Todo
+        
+        // TODO IsBalanced()
+        public bool IsBalanced()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO need to understand BFS/BFT
+        public bool IsComplete()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO need to understand BFS/BFT
+        public bool IsFull()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 
     public class BinaryTree
     {
-        private readonly TreeNode _root;
+        private bool _enableDuplicates;
+        private TreeNode _root;
         private int _count;
 
         private readonly StringBuilder _treeValuesAsString;
 
-        public BinaryTree()
+        public BinaryTree(bool enableDuplcates = false)
         {
+            _enableDuplicates = enableDuplcates;
             _treeValuesAsString = new StringBuilder();
         }
 
-        public BinaryTree(TreeNode root) : base()
+        public BinaryTree(TreeNode root)
         {
             _treeValuesAsString = new StringBuilder();
             _root = root;
         }
 
+        public void Insert(int data)
+        {
+            if (_root == null)
+                _root = new TreeNode(data);
+            else
+                _root.Insert(data);
+        }
+
+        public bool Contains(int data)
+        {
+            if (_root == null)
+                return false;
+
+            return _root.Contains(data);
+        }
+
+        public void Remove(int data)
+        {
+            _root?.Remove(data);
+        }
+        
         private string PrintTraversal(Action haunlder)
         {
             _count = 0;
@@ -43,7 +134,7 @@ namespace Struct.TreeBinaryImpl
             Console.WriteLine(_treeValuesAsString);
             return _treeValuesAsString.ToString().TrimEnd();
         }
-
+        
         public string PrintInOrderTraversal()
         {
             return PrintTraversal(() => InOrderTraversal(_root));
@@ -95,26 +186,21 @@ namespace Struct.TreeBinaryImpl
             _count++;
         }
         
-        public bool Contains(int data)
-        {
-            return false;
-        }
-
         public bool IsBalanced()
         {
-            throw new NotImplementedException();
+            return _root.IsBalanced();
         }
 
         public bool IsComplete()
         {
-            throw new NotImplementedException();
+            return _root.IsComplete();
         }
 
         public bool IsFull()
         {
-            throw new NotImplementedException();
+            return _root.IsFull();
         }
-
+        
         public void PrintInfo()
         {
             Console.WriteLine("Binary tree");

@@ -50,7 +50,7 @@ namespace Struct.BaseHashTableImpl
                 {
                     return GetValue(key);
                 }
-                catch (KeyNotFoundException e)
+                catch (KeyNotFoundException)
                 {
                     return null;
                 }
