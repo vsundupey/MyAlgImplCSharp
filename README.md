@@ -10,8 +10,8 @@ C# implementation using netcore2.0
 # TODO
 ## Algorithms
 ### Sorting
-- [ ] Simple sort
-  - [ ] Bubble sort
+- [x] Simple sort
+  - [x] Bubble sort
   - [ ] Insertion sort
   - [ ] Selection sort
 - [x] Merge sort
