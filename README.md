@@ -13,7 +13,7 @@ C# implementation using netcore2.0
 - [x] Simple sort
   - [x] Bubble sort
   - [ ] Insertion sort
-  - [ ] Selection sort
+  - [x] Selection sort
 - [x] Merge sort
 - [x] Quick sort
 - [ ] Heap sort

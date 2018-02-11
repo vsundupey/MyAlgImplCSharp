@@ -17,7 +17,8 @@ namespace Sorting.SortAlgorithm
     public static class SortingArrayExtension
     {      
         public static void Print(this IList<int> array)
-        { 
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine(string.Join(" ", array.Select(v => v.ToString())));
         }
 
@@ -38,7 +39,7 @@ namespace Sorting.SortAlgorithm
             {
                 if (i == left || i == right) Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.Write($"{array[i]} ");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
             Console.Write(" <=> ");
             Console.WriteLine();
@@ -60,7 +61,7 @@ namespace Sorting.SortAlgorithm
             {
                 if (i == currentIndex) Console.ForegroundColor = color;
                 Console.Write($"{array[i]} ");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
             Console.Write(direction);
             Console.WriteLine();
