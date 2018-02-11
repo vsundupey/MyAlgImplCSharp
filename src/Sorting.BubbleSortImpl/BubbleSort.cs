@@ -15,13 +15,20 @@ namespace Sorting.BubbleSortImpl
         {
             return Task.Run(() =>
             {
+                bool swapped = false;
+                
                 for (int i = 0; i < array.Count - 1; i++)
                 {
                     for (int j = 0; j < array.Count - i - 1; j++)
                     {
                         if (array[j] > array[j + 1])
+                        {
                             array.Swap(j, j + 1);
+                            swapped = true;
+                        }                        
                     }
+                    
+                    if(!swapped) break;
                 }
             });
         }
