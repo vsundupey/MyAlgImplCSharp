@@ -1,16 +1,15 @@
 using System;
-using System.Threading.Tasks;
 using Helpers.TestsHelper;
 using Sorting.SortAlgorithm;
 using Xunit;
 
-namespace Sorting.SelectionSortImpl.Tests
+namespace Sorting.InsertionSortImpl.Tests
 {
-    public class SelectionSortTests : BaseSortTestsHelper
+    public class InsertionSortTests : BaseSortTestsHelper
     {
-        public SelectionSortTests()
+        public InsertionSortTests()
         {
-            Algorithm = new SelectionSort {IsDebug = false};
+            Algorithm = new InsertionSort {IsDebug = false};
         }
 
         [Fact]

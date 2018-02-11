@@ -15,7 +15,8 @@ script:
 - dotnet test src/Search.BinaryImpl.Tests/Search.BinaryImpl.Tests.csproj
 
 # Sort alogorithms
-- dotnet test src/Sorting.BubbleSortImpl.Tests/Sorting.BubbleSortImpl.Tests.csproj
+- dotnet test src/Sorting.BubbleSortImpl.Tests/Sorting.BubbleSortImpl.Tests.
+- dotnet test src/Sorting.InsertionSortImpl.Tests/Sorting.InserttionSortImpl.Tests.csproj
 - dotnet test src/Sorting.SelectionSortImpl.Tests/Sorting.SelectionSortImpl.Tests.csproj
 - dotnet test src/Sorting.MergeSortImpl.Tests/Sorting.MergeSortImpl.Tests.csproj
 - dotnet test src/Sorting.QuickSortImpl.Tests/Sorting.QuickSortImpl.Tests.csproj
