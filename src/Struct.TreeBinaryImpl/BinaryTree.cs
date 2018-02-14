@@ -39,7 +39,7 @@ namespace Struct.TreeBinaryImpl
             if (Data == value)
                 return true;
 
-
+            
             if (value < Data)
             {
                 if (Left == null)
