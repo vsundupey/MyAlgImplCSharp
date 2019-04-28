@@ -6,14 +6,14 @@ namespace Struct.HeapMinImpl
     //                  *
     //                /   \
     //           left       right
-    //      index*2+1       index*2+2      
+    //      index*2+1       index*2+2
     public class MinIntHeap
     {
         private int capacity = 10;
         private int size = 0;
 
         int[] items;
-        
+
         public MinIntHeap()
         {
             items = new int[capacity];
@@ -49,13 +49,13 @@ namespace Struct.HeapMinImpl
 
         public int peek()
         {
-            if (size == 0) throw new Exception("Heap doesn't contain elemants");  
-            return items[0];       
+            if (size == 0) throw new Exception("Heap doesn't contain elemants");
+            return items[0];
         }
 
         public int poll()
         {
-            if (size == 0) throw new Exception("Heap doesn't contain elemants");  
+            if (size == 0) throw new Exception("Heap doesn't contain elemants");
             int item = items[0];
             items[0] = items[size - 1];
             size--;
