@@ -1,15 +1,19 @@
 [![Build Status](https://travis-ci.org/vsundupey/MyAlgImplCSharp.svg?branch=master)](https://travis-ci.org/vsundupey/MyAlgImplCSharp)
+
 # My implementation of basic algorithms and structures
 
 The main goal of the development is to refresh university knowledge and a deeper understanding of the details
 
 ## Details 
 
-C# implementation using netcore2.0
+C# implementation using netcore2.1
 
 # TODO
+
 ## Algorithms
+
 ### Sorting
+
 - [x] Simple sort
   - [x] Bubble sort
   - [x] Insertion sort
@@ -17,12 +21,17 @@ C# implementation using netcore2.0
 - [x] Merge sort
 - [x] Quick sort
 - [ ] Heap sort
+
 ### Search
+
 - [x] Linear search
 - [x] Binary search
 - [ ] Interpolation search
+
 ## Structures
-- [ ] ArrayList
+
+- [X] ArrayList
+  - [ ] ArrayList unit tests
 - [x] LinkedList
   - [x] Singly Linked List
   - [ ] Doubly Linked List
@@ -44,6 +53,7 @@ C# implementation using netcore2.0
     - [ ] Level Order traversal
     - [ ] Check for Complete
     - [ ] Check for Full
+    - [ ] Check for Balanced
   - [x] Binary Search Tree (Extends Binary Tree)
     - [x] Insert
     - [x] Search
@@ -51,18 +61,15 @@ C# implementation using netcore2.0
   - [ ] AVL Tree
   - [ ] Red-Black Tree
 - [ ] Graphs
-   - [ ] Graph (null graph)
-   - [ ] Undirected Graph
-   - [ ] Directed Graph
-   - [ ] Breadth First Search (BFS)
-   - [ ] Depth First Search (DFS)
-   - [ ] Shortest Path - Dijkstra
-   - [ ] Shortest Path - Floyd Warshall
-   
+  - [ ] Graph (null graph)
+  - [ ] Undirected Graph
+  - [ ] Directed Graph
+  - [ ] Breadth First Search (BFS)
+  - [ ] Depth First Search (DFS)
+  - [ ] Shortest Path - Dijkstra
+  - [ ] Shortest Path - Floyd Warshall
 
-## Other
+## Miscellaneous
+
 - [x] Add Travis CI
 - [x] xUnit Tests
-
-
-
