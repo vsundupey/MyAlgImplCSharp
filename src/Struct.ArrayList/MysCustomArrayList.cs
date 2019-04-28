@@ -9,14 +9,11 @@ namespace Struct.ArrayList
     /// <typeparam name="T"></typeparam>
     public class MysCustomArrayList<T>
     {
-        private T[] elementData = new T[10];
+        private T[] elementData;
 
         public int Size { get; private set; }
 
-        public int Capacity
-        {
-            get { return elementData.Length; }
-        }
+        public int Capacity { get; private set; } = 10;
 
         public T this[int index]
         {
@@ -26,33 +23,35 @@ namespace Struct.ArrayList
 
         public MysCustomArrayList()
         {
-
+            elementData = new T[Capacity];
         }
 
         public MysCustomArrayList(int capacity)
         {
-            T[] elementData = new T[capacity];
+            Capacity = capacity;
+            elementData = new T[capacity];
         }
 
         // O(1)
         public void Add(T value)
         {
             ensureCapacity();
-            elementData[Size++] = value;
+            elementData[Size] = value;
+            Size++;
         }
 
         // O(n)
         public void InsertAt(T value, int index)
         {
             ensureCapacity();
-            Array.Copy(elementData, index, elementData, index + 1, elementData.Length - index);
+            Array.Copy(elementData, index, elementData, index + 1, Size - index);
             elementData[index] = value;
         }
 
         // O(n)
         public void Remove(int index)
         {
-            Array.Copy(elementData, index + 1, elementData, index, elementData.Length - index);
+            Array.Copy(elementData, index + 1, elementData, index, Size - index);
             Size--;
         }
 
@@ -72,10 +71,12 @@ namespace Struct.ArrayList
         // O(n)
         private void ensureCapacity()
         {
-            if ((Size++) > elementData.Length)
+            if ((Size + 1) >= Capacity)
             {
-                T[] tmpArray = new T[elementData.Length * 2];
+                Capacity *= 2;
+                T[] tmpArray = new T[Capacity];
                 Array.Copy(elementData, tmpArray, elementData.Length);
+                elementData = tmpArray;
             }
         }
     }
