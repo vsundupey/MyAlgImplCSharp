@@ -7,7 +7,7 @@ namespace Struct.ArrayList
     /// My attempt to implement ArrayList
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class MysCustomArrayList<T> where T : IList
+    public class MysCustomArrayList<T>
     {
         private T[] elementData = new T[10];
 
